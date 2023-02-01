@@ -1,0 +1,25 @@
+{
+  "name": "xperia_technologies",
+  "version": "1.0.0",
+  "description": "web site for xperia technologies phone and accesories shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sithikaru/Xperia_technologies.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "shop",
+    "xperia"
+  ],
+  "author": "Sithija Karunasena",
+  "start": "sass./sass/style.scss style.css --watch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sithikaru/Xperia_technologies/issues"
+  },
+  "homepage": "https://github.com/sithikaru/Xperia_technologies#readme"
+}
