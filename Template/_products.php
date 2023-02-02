@@ -1,21 +1,25 @@
 <!--product-->
+<?php
+    $item_Id = $_GET['item_id'];
 
+
+    foreach ($product->getData()as $item):
+    if ($item['item_id'] == $item_Id):
+?>
 <section id="product">
     <div class="container">
         <div class="row pt-5">
             <div class="col-sm-6 col-12">
-                <img src="./assets/big1.jpg" alt="product pic" class="img-fluid">
+                <img src="./assets/<?php echo $item['item_image']; ?>" alt="product pic" class="img-fluid">
                 <div class="form-row pt-4 font-size-16 font-baloo">
                     <div class="col">
                         <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
                     </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-sm-6 py-5">
-                <h5 class="font-baloo font-size-20">Sony Xperia Pro I</h5>
+                <h5 class="font-baloo font-size-20">Sony Xperia <?php echo $item['item_name']; ?></h5>
                 <small>by Sony</small>
                 <div class="d-flex">
                     <div class="rating text-warning fontsize-12">
@@ -30,30 +34,19 @@
                 <hr class="m-0">
                 <!--product price-->
                 <table class="my-3">
+
                     <tr class="font-rale font-size-14">
                         <td>
-                            M.R.P
+                            Discounted Price
                         </td>
-                        <td>
-                            <strike>$145.00</strike>
-                        </td>
+
                     </tr>
-                    <tr class="font-rale font-size-14">
-                        <td>
-                            Deal Price
-                        </td>
+                    <tr>
                         <td class="font-size-20 text-danger">
-                            $<span>130.00 <small class="text-dark font-size-12"> Including All Taxes.</small></span>
+                            <span><?php echo $item['item_price']; ?> RS. <small class="text-dark font-size-12"> Including All Taxes.</small></span>
                         </td>
                     </tr>
-                    <tr class="font-rale font-size-14">
-                        <td>
-                            You Save
-                        </td>
-                        <td>
-                            <span class="font-size-16 text-danger">$15</span>
-                        </td>
-                    </tr>
+
                 </table>
 
                 <!--Policy-->
@@ -128,3 +121,13 @@
         </div>
     </div>
 </section>
+
+<?php
+    endif;
+    endforeach;
+if (isset($_POST['products_cart_submit'])) {
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+    }
+}
+    ?>

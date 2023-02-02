@@ -31,3 +31,5 @@
     </div>
 </footer>
 <div class="copyright text-center bg-dark text-white py-2"><p class="font-rale">&copy; Copyright 2023 Designed By <a href="https://www.facebook.com/zijja3d/">Sithija Krunasena</a>.</p></div>
+
+<script src="index.js"></script>

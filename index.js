@@ -2,9 +2,15 @@ $(document).ready(function(){
 
     //banner carrousel
     $("#banner-area .owl-carousel").owlCarousel({
-        dots: true,
-        items: 1
+        items:1,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true
     });
+
+
 
     //top sale carrousel
     $("#top-sale .owl-carousel").owlCarousel({
